@@ -1,20 +1,20 @@
-import { type FC } from 'react'
-import styles from './styles.module.css'
-import CarouselCard from '../carousel-card'
-import { modernProductCards } from '@/lib/constant'
+import { modernProductCards } from '@/lib/constant';
+import type { FC } from 'react';
+import CarouselCard from '../carousel-card';
+import styles from './styles.module.css';
 
 const Carousel: FC = () => {
-	return (
-		<div>
-			<div className={styles.carousel__container}>
-				<div className={styles.carousel__inner__container}>
-					{modernProductCards.map((card) => (
-						<CarouselCard key={card.id} {...card} />
-					))}
-				</div>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div>
+      <div className={styles.carousel__container}>
+        <div className={styles.carousel__inner__container}>
+          {modernProductCards.map((card) => (
+            <CarouselCard key={card.id} {...card} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Carousel
+export default Carousel;

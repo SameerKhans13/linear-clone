@@ -1,12 +1,12 @@
-import type { FC, ReactNode } from 'react'
-import styles from './styles.module.css'
+import type { FC, ReactNode } from 'react';
+import styles from './styles.module.css';
 
 type Props = {
-	children: ReactNode
-}
+  children: ReactNode;
+};
 
 const LayoutWrapper: FC<Props> = ({ children }) => {
-	return <div className={styles.layout__wrapper}>{children}</div>
-}
+  return <div className={styles.layout__wrapper}>{children}</div>;
+};
 
-export default LayoutWrapper
+export default LayoutWrapper;

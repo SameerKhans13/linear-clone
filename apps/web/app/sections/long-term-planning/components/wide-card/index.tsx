@@ -1,23 +1,19 @@
-'use client'
+'use client';
 
-import { useState, type FC } from 'react'
-import TabHeader from './tab-header'
-import TabBody from './tab-body'
-import styles from './styles.module.css'
-import { tabHeaders } from '../../feature-lookup-data'
+import { type FC, useState } from 'react';
+import { tabHeaders } from '../../feature-lookup-data';
+import styles from './styles.module.css';
+import TabBody from './tab-body';
+import TabHeader from './tab-header';
 
 const WideCard: FC = () => {
-	const [currentTab, setCurrentTab] = useState<string>(tabHeaders[0].id)
-	return (
-		<div className={styles.wide__card__tab}>
-			<TabHeader
-				tabHeaders={tabHeaders}
-				currentTab={currentTab}
-				changeTab={setCurrentTab}
-			/>
-			<TabBody currentTab={currentTab} />
-		</div>
-	)
-}
+  const [currentTab, setCurrentTab] = useState<string>(tabHeaders[0].id);
+  return (
+    <div className={styles.wide__card__tab}>
+      <TabHeader tabHeaders={tabHeaders} currentTab={currentTab} changeTab={setCurrentTab} />
+      <TabBody currentTab={currentTab} />
+    </div>
+  );
+};
 
-export default WideCard
+export default WideCard;
