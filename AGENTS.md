@@ -1633,4 +1633,4 @@ npm run format
 
 ---
 
-**Remember**: Focus on delivering a polished, performant MVP that closely matches Linear's UX rather than implementing every feature. Quality over quantity.
+**Remember**: Focus on delivering a polished, performant MVP that closely matches Linear's UX rather than implementing every feature. Quality over quantity
