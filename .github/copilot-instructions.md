@@ -46,6 +46,7 @@ linear-clone/
 
 **Removed**: `docs` app (unnecessary for Linear clone), `eslint-config` package (replaced with Biome.js)
 
+<<<<<<< HEAD
 **Phase 1, 2, & 4.1-4.3 Complete**:
 
 - Phase 1: Turborepo setup, Biome.js, Vitest, Next.js with Tailwind v4, Hono.js backend, database package
@@ -53,6 +54,13 @@ linear-clone/
 - Phase 4.1: Design system with Linear-inspired tokens (200+ CSS variables), dark/light theme, priority colors
 - Phase 4.2: State management (5 Zustand stores), 8 UI components (Button, Input, Dialog, Avatar, Badge, Tooltip, Textarea), utility functions
 - Phase 4.3: Core layouts (root layout with providers, authentication layout, main app layout with sidebar + top nav)
+=======
+**Phase 1, 2 & 3.1 Complete**:
+
+- Phase 1: Turborepo setup, Biome.js, Vitest, Next.js with Tailwind v4, Hono.js backend, database package
+- Phase 2: Database schema with 16 tables (users with passwordHash, sessions, workspaces, teams, projects, cycles, issues, labels, comments, attachments, activity logs, notifications), 17 performance indexes, transaction utilities, query builders
+- Phase 3.1: Authentication system with JWT tokens, bcrypt password hashing, session management, auth middleware, registration/login/logout/me endpoints, Zod validation, 17/17 tests passing
+>>>>>>> 5bd2ee8137d2990974c1eec707bcd54a727f4e4a
 
 **Current State**: Frontend foundation complete with design system, state management, and layout structure. Ready for Phase 4.4 (authentication pages) and 4.5 (navigation components).
 
@@ -67,12 +75,17 @@ linear-clone/
 - TypeScript: 5.x (strict mode enabled)
 - Code Quality: Biome.js 1.9.4 (root) + 2.2.0 (apps/web for compatibility)
 
+**Implemented**:
+
+- Backend: Hono.js 4.6.11 (running on port 3001)
+- Database: PostgreSQL with Drizzle ORM 0.36.4
+- Auth: ✅ JWT + Bcrypt (17/17 tests passing)
+- Validation: Zod 3.23.8
+- Testing: Vitest 2.1.4 (comprehensive test coverage required)
+
 **Planned** (per `AGENTS.md`):
 
-- Backend: Hono.js with WebSockets
-- Database: PostgreSQL with Drizzle ORM
-- Auth: Better Auth
-- Testing: Vitest (comprehensive test coverage required)
+- Backend: WebSockets for real-time features
 - UI: Radix UI primitives (to be installed)
 - State: Zustand (to be installed)
 - Forms: React Hook Form + Zod (to be installed)

@@ -13,7 +13,8 @@ A high-fidelity fullstack clone of Linear.app built with modern technologies foc
 - **Code Quality**: Biome.js 1.9.4 (root) + 2.2.0 (web)
 - **Testing**: Vitest 2.1.4
 - **TypeScript**: 5.6.3
-- **Auth**: Better Auth (planned)
+- **Auth**: ✅ **Better Auth (JWT + Bcrypt)** - Implemented
+- **Validation**: Zod 3.23.8
 - **UI Components**: Radix UI (to be installed)
 - **State Management**: Zustand (to be installed)
 - **Forms**: React Hook Form + Zod (to be installed)
@@ -187,10 +188,34 @@ npm run db:push
 npm run db:studio
 ```
 
-## 📚 Documentation
+## � Security
+
+### Authentication System
+- **JWT Tokens**: 7-day expiration with secure signing
+- **Password Hashing**: Bcrypt with cost factor 12
+- **Session Management**: Database-backed session tokens
+- **Environment Security**: 
+  - Production deployment fails if `JWT_SECRET` is not set
+  - Development shows warnings for missing environment variables
+- **Error Sanitization**: 
+  - Production: No sensitive information in error responses
+  - Development: Full error details for debugging
+
+### Security Best Practices
+- ✅ No hardcoded secrets in production
+- ✅ Expired session cleanup mechanism
+- ✅ Input validation with Zod schemas
+- ✅ Type-safe database queries (no SQL injection)
+- ✅ Password hash stored securely (never exposed in API responses)
+
+See [CODE_REVIEW_FIXES.md](./CODE_REVIEW_FIXES.md) for recent security improvements.
+
+## �📚 Documentation
 
 - [AGENTS.md](./AGENTS.md) - Comprehensive implementation guide and feature requirements
 - [.github/copilot-instructions.md](./.github/copilot-instructions.md) - Development guidelines and best practices
+- [CODE_REVIEW_FIXES.md](./CODE_REVIEW_FIXES.md) - Security improvements and code review responses
+- [TESTING.md](./TESTING.md) - Testing guide and manual API testing instructions
 - [apps/api/README.md](./apps/api/README.md) - Backend API documentation
 - [packages/database/README.md](./packages/database/README.md) - Database setup and schema docs
 
@@ -210,7 +235,7 @@ npm run db:studio
 
 **Phase 2: Database Schema Design** ✅
 
-- [x] Complete database schema (15 tables, 127 columns)
+- [x] Complete database schema (16 tables, 133 columns)
 - [x] Migration files generated with proper indexes (17 indexes)
 - [x] Transaction utilities for atomic operations
 - [x] Query builder utilities for complex filtering
@@ -218,7 +243,21 @@ npm run db:studio
 - [x] Connection pooling configuration
 - [x] Comprehensive documentation
 
-See [PHASE2_COMPLETE.md](./PHASE2_COMPLETE.md) for details.
+**Phase 3.1: Authentication System** ✅
+
+- [x] JWT token authentication with 7-day expiration
+- [x] Bcrypt password hashing (cost factor 12)
+- [x] Session management with database-backed tokens
+- [x] Auth middleware for protected routes
+- [x] User registration endpoint
+- [x] User login endpoint
+- [x] User logout endpoint
+- [x] Get current user endpoint
+- [x] Zod validation schemas
+- [x] Comprehensive unit tests (17/17 passing)
+- [x] Clean architecture (routes → services → database)
+
+See [PHASE2_COMPLETE.md](./PHASE2_COMPLETE.md) for database details.
 
 **Phase 4: Frontend Development (Partial)** 🔄
 
@@ -245,9 +284,15 @@ See sections 4.1, 4.2, and 4.3 in [AGENTS.md](./AGENTS.md) for completed feature
 
 ### 🔄 In Progress
 
+<<<<<<< HEAD
 - [ ] Backend API development (Phase 3)
 - [ ] Frontend development - Phase 4.3 onwards
 - [ ] Authentication with Better Auth
+=======
+- [ ] Workspace & Team management routes (Phase 3.2)
+- [ ] Issue tracking routes (Phase 3.3)
+- [ ] Frontend development (Phase 4)
+>>>>>>> 5bd2ee8137d2990974c1eec707bcd54a727f4e4a
 
 ### 📋 Planned
 
